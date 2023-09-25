@@ -1,5 +1,19 @@
 import React, { useEffect } from "react";
+const categories = [
+  { name: "Electronics", value: "electronics" },
+  { name: "Home", value: "home" },
+  { name: "Fashions", value: "fashion" },
+  { name: "Sports", value: "sports" },
+  { name: "Toys", value: "toys" },
+];
 
+const ages = [
+  { name: "0 - 10years Old", value: "0-20" },
+  { name: "21 - 40years Old", value: "21-40" },
+  { name: "41-60years Old", value: "41-60" },
+  { name: "61-80years Old", value: "61-80" },
+  { name: "81-100years Old", value: "11-100" },
+];
 const Filters = ({
   showFilters,
   setShowFilters,
@@ -7,22 +21,6 @@ const Filters = ({
   setFilters,
   getData,
 }) => {
-  const categories = [
-    { name: "Electronics", value: "electronics" },
-    { name: "Home", value: "home" },
-    { name: "Fashions", value: "fashion" },
-    { name: "Sports", value: "sports" },
-    { name: "Toys", value: "toys" },
-  ];
-
-  const ages = [
-    { name: "0 - 10years Old", value: "0-20" },
-    { name: "21 - 40years Old", value: "21-40" },
-    { name: "41-60years Old", value: "41-60" },
-    { name: "61-80years Old", value: "61-80" },
-    { name: "81-100years Old", value: "11-100" },
-  ];
-
   useEffect(() => {
     //  console.log("show filters", filters);
     getData();
@@ -33,7 +31,7 @@ const Filters = ({
         <h1 className="text-md text-primary font-semibold">Filters</h1>
         <i
           className="ri-close-line cursor-pointer"
-          onClick={() => setShowFilters(false)}
+          onClick={() => setShowFilters(!showFilters)}
         ></i>
       </div>
 
@@ -69,7 +67,7 @@ const Filters = ({
         })}
       </div>
       <div className="flex flex-col gap-1 mt-3">
-        <h2>Ages</h2>
+        <h2>Product Age</h2>
         {ages.map((age) => {
           return (
             <div className="flex items-center gap-2">

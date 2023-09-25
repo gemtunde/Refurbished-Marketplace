@@ -89,6 +89,9 @@ const ProtectedPage = ({ children }) => {
             }}
           >
             GEMTUNDE-MarketPlace
+            <p className="text-semibold text-sm">
+              ... bid for refurbished products
+            </p>
           </h1>
           <div className="bg-white py-2 px-5 flex gap-1 rounded items-center">
             <span
